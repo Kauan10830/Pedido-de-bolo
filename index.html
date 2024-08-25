@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta sobre bolo</title>
+    <style>
+        .button-disabled {
+            pointer-events: none;
+            color: grey;
+            position: relative;
+            transition: transform 0.5s ease-out;
+        }
+
+        .move-away {
+            transform: translateX(100vw) translateY(-100vh);
+        }
+    </style>
+</head>
+<body>
+    <h1>Você aceita um bolo?</h1>
+    <button id="yesButton">Sim</button>
+    <button id="noButton" class="button-disabled">Não</button>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', function() {
+            noButton.classList.add('move-away');
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert('Você aceitou o bolo!');
+        });
+    </script>
+</body>
+</html>
